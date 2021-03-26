@@ -127,7 +127,7 @@ class Question(models.Model):
     # Indicate if this choice of the question is a correct one or not
     # Other fields and methods you would like to design
 class Choice(models.Model):
-    choice_text = models.CharField(max_length=20, default="choice_text")
+    choice_text = models.CharField(max_length=50, default="choice_text")
     is_correct = models.BooleanField(default=False)
     question_id = models.ManyToManyField(Question)
    
