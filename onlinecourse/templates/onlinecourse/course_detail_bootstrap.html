@@ -61,7 +61,7 @@
             <!-- <HINT> For each question choice, you may create a checkbox input like
             <input type="check" name="choice_{{choice.id}}" id="{{choice.id}}" ...>
             -->
-                <form id="questionform" action="point to a submit view" method="post">
+                <form id="questionform" action="{% url 'onlinecourse:submit' course.id %}" method="post">
                             {% for question in course.question_set.all %}
                             <div class="card mt-1">
                                 <div class="card-header"><h5>{{ question.question_text}}</h5></div>
@@ -77,8 +77,8 @@
                                     </div>
                                     {% endfor %}
                                 </div>
-                                {% endfor %}
                             </div>
+                             {% endfor %}
                         <input class="btn btn-success btn-block" type="submit" value="Submit">
                 </form>
             </div>
